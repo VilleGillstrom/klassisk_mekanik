@@ -2,14 +2,14 @@
 f = [8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38];
 
 % Golfboll
-Lg = [0.304 0.306 0.307 0.307 0.308 0.309 0.315 0.339 0.341 0.343 0.340 0.344 0.342 0.338 0.336 0.337];  %m
+Lg = [0.304 0.306 0.307 0.307 0.308 0.309 0.315 0.339 0.341 0.343 0.340 0.344 0.342 0.338 0.336 0.337].';  %m
 mg = 4.5E-3; 
 dg = 42E-3;
 rg = dg/2;
 Ag = pi * rg^2;
 Rg = Lg - rg;
 % Pingisboll 
-Lp = [0.249 0.247 0.247 0.247 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.245 0.244]; %m
+Lp = [0.249 0.247 0.247 0.247 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.246 0.245 0.244].'; %m
 mp = 2.5E-3; 
 dp = 38E-3;
 rp = dp/2;
@@ -56,11 +56,19 @@ end
 
 
 
-plot_cd_against_v(vg, Cdg, vp, Cdp);
+%plot_cd_against_v(vg, Cdg, vp, Cdp);
 %plot_cd_against_re(Re_g, Cdg, Re_p, Cdp);
 %plot_cd_against_re_log(Re_g, Cdg, Re_p, Cdp);
 %plot_stokes_against_v(vg,stokesg, vp, stokesp) 
 
+Mrg = 45.73E-3;
+Arg = ((42.69E-3)/2)^2 * pi ;
+
+F = Mrg * 9.82;
+Cd2 = 0.51
+
+
+v = sqrt((F *2) / (Cd2 * Arg* rho_air))
 
 function plot_cd_against_v(vg, Cdg, vp, Cdp)
         
